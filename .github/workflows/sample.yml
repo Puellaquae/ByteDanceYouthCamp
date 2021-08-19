@@ -30,8 +30,8 @@ jobs:
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.4.0
-        
-      - name: Build
+      
+      - name: Install & Build
         run: |
           cd demo/demo_vuex_request
           npm install
@@ -41,4 +41,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
           branch: dist
-          folder: dist
+          folder: demo/demo_vuex_request/dist
