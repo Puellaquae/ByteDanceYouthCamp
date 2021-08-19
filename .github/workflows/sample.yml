@@ -37,6 +37,7 @@ jobs:
         run: |
           cd demo/demo_vuex_request
           npm install
+          echo "module.exports = {publicPath: 'ByteDanceYouthCamp' }" > "vue.config.js"
           npm run build
     
       - name: Deploy
