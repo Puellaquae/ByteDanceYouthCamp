@@ -49,5 +49,5 @@ jobs:
       - name: DeployQingfuwu
         run: cd demo/demo_vuex_request
           | zip -r dist.zip dist/*
-          | curl -X POST open.qingfuwu.cn/v1/services/qcmruc/hosting/versions -H "Authorization:Bearer ${{ secrets.QINGFUWU_TOKEN }}" -f "file~@./dist.zip"
+          | curl -X POST open.qingfuwu.cn/v1/services/qcmruc/hosting/versions -H "Authorization:Bearer ${{ secrets.QINGFUWU_TOKEN }}" -F "file=@./dist.zip"
         
