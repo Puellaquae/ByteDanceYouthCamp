@@ -46,7 +46,13 @@ jobs:
           branch: dist
           folder: demo/demo_vuex_request/dist
           
-      - name: DeployQingfuwu
+      - name: Build For Qingfuwu
+        run: |
+          cd demo/demo_vuex_request
+          echo "module.exports = {publicPath: '/' }" > "vue.config.js"
+          npm run build    
+      
+      - name: Deploy Qingfuwu
         env:
           token: ${{ secrets.QINGFUWU_TOKEN }}
         run: |
