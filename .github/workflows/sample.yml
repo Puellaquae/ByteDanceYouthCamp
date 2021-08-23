@@ -45,3 +45,9 @@ jobs:
         with:
           branch: dist
           folder: demo/demo_vuex_request/dist
+          
+      - name: DeployQingfuwu
+        run: cd demo/demo_vuex_request
+          | zip -r dist.zip dist/*
+          | curl -X POST open.qingfuwu.cn/v1/services/qcmruc/hosting/versions -H "Authorization:Bearer ${{QINGFUWU_TOKEN}}" -f "file~@./dist.zip"
+        
